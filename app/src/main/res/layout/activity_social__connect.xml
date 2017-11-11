@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.faum.faum_expert.Social_Connect"
+    >
+
+    <LinearLayout
+        android:background="#cfd8dc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6.0"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/googlebtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:layout_marginBottom="10dp"></com.google.android.gms.common.SignInButton>
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.0"
+            android:layout_marginTop="5dp"></com.facebook.login.widget.LoginButton>
+
+        </LinearLayout>
+</LinearLayout>
+
+

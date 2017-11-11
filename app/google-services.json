@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "677848366739",
+    "firebase_url": "https://faum-expert.firebaseio.com",
+    "project_id": "faum-expert",
+    "storage_bucket": "faum-expert.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677848366739:android:0beffc7f3c598106",
+        "android_client_info": {
+          "package_name": "com.faum.faum_expert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677848366739-569ngr80t1l24vomtlnsic4vqvnu0n33.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.faum.faum_expert",
+            "certificate_hash": "b09cde823593c84b73bdaecb907b67fac5905bc7"
+          }
+        },
+        {
+          "client_id": "677848366739-1aegvlujsftbq21o3utriqk77ujkbjke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB89ZJbJH7OKwMftB5AMqxlTM2ubuJVE9E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677848366739-1aegvlujsftbq21o3utriqk77ujkbjke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
