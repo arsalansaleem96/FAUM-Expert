@@ -2,6 +2,7 @@ package com.faum.faum_expert;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -26,9 +27,13 @@ public class New_Deal_List extends AppCompatActivity {
 
     List<NewDeal_Database> dealList;
 
+    //public static final String TAG = "New_Deal_List";
+
     DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Expert");
 
-
+    //DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+    //DatabaseReference ref = rootRef.child("faum-expert").child("Expert").child(id).child("Cooker Deals");
+    int count = 0;
 
 
     @Override
@@ -40,31 +45,26 @@ public class New_Deal_List extends AppCompatActivity {
 
         dealList = new ArrayList<>();
 
+        /*
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    String dealName = ds.child("Deals Information").child("dealName").getValue(String.class);
+                    String newDealCategory = ds.child("Deals Information").child("newDealCategory").getValue(String.class);
+                    Log.d(TAG, dealName + " / " + newDealCategory);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        };
+        ref.addListenerForSingleValueEvent(eventListener);
+        */
+
 
     }
-/*
-    rootRef.addValueEventListener(new ValueEventListener() {
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            showData(dataSnapshot);
-        }
 
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-
-        }
-    });
-    private void showData(DataSnapshot dataSnapshot){
-        NewDeal_Database info = new NewDeal_Database();
-        info.getDealName(dataSnapshot.);
-        info.getNewDealCategory();
-
-        ArrayList<String> array = new ArrayList<>();
-        array.add(info.getDealName());
-        array.add(info.getNewDealCategory());
-        ArrayAdapter adatpter =  new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
-        lvDealList.setAdapter(adatpter);
-    }*/
 
 
 
@@ -72,24 +72,29 @@ public class New_Deal_List extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        rootRef.addValueEventListener(new ValueEventListener() {
+
+        //dealList.clear();
+
+        rootRef.child(id).child(Cooker_Deal).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
 
-                dealList.clear();
-
                 for(DataSnapshot dealSnapshot : dataSnapshot.getChildren()){
+                    for(DataSnapshot datas : dealSnapshot.getChildren()){       //
+                        NewDeal_Database info = datas.getValue(NewDeal_Database.class);
+                        count++;
+                        if(count>3){
+                            dealList.add(info);
+                            count=0;
+                        }
 
-                    NewDeal_Database info = dealSnapshot.getValue(NewDeal_Database.class);
 
-                    dealList.add(info);
+                    }
                 }
-
                 DealList adapter = new DealList( New_Deal_List.this,dealList);
                 lvDealList.setAdapter(adapter);
-
-
+                adapter.notifyDataSetChanged();
             }
 
 

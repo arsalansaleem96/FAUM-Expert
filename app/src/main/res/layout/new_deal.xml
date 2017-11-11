@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="47dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="textPersonName"
         android:hint="Deal Name"
         android:layout_marginStart="6dp"
         android:layout_marginEnd="6dp"

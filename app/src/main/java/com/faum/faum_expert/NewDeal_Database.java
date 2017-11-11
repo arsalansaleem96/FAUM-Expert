@@ -6,8 +6,10 @@ package com.faum.faum_expert;
 
 public class NewDeal_Database {
 
-    private String  NewDealCategory , DishName, DealDescription ;
-    private int DealName;
+    private String  newDealCategory , dishName , dealDescription ;
+    //private int dealName;
+    private String dealName;
+
 
 
     private String EstimateTime ,NewDealPrice ,NewDealSize ;
@@ -22,28 +24,28 @@ public class NewDeal_Database {
 
     }
 
-    public NewDeal_Database(int DealName,String NewDealCategory, String DishName, String DealDescription){
-        this.DealName = DealName;
-        this.NewDealCategory = NewDealCategory;
-        this.DishName = DishName;
-        this.DealDescription = DealDescription;
+    public NewDeal_Database(String DealName,String NewDealCategory, String DishName, String DealDescription){
+        this.dealName = DealName;
+        this.newDealCategory = NewDealCategory;
+        this.dishName = DishName;
+        this.dealDescription = DealDescription;
     }
 
 
-    public int getDealName() {
-        return DealName;
+    public String getDealName() {
+        return dealName;
     }
 
     public String getNewDealCategory() {
-        return NewDealCategory;
+        return newDealCategory;
     }
 
     public String getDishName() {
-        return DishName;
+        return dishName;
     }
 
     public String getDealDescription() {
-        return DealDescription;
+        return dealDescription;
     }
 
     public NewDeal_Database(String EstimateTime, String NewDealPrice, String NewDealSize){

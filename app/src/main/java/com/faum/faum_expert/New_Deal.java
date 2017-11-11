@@ -53,7 +53,8 @@ import static com.faum.faum_expert.Personal_Information.t_name;
     private void AddNewDeal(){
 
 
-        int DealName = Integer.parseInt(etDealName.getText().toString());
+        //int DealName = Integer.parseInt(etDealName.getText().toString());
+        String DealName = etDealName.getText().toString();
         String NewDealCategory = etNewDealCategory.getText().toString();
         String DishName = etDishName.getText().toString();
         String DealDescription  = etDealDescription.getText().toString();

@@ -40,7 +40,8 @@ public class DealList  extends ArrayAdapter <NewDeal_Database> {
 
         NewDeal_Database info = dealList.get(position);
 
-        tvDealName.setText(String.valueOf(info.getDealName()));
+        //tvDealName.setText(String.valueOf(info.getDealName()));
+        tvDealName.setText(info.getDealName());
         tvNewDealCategory.setText(info.getNewDealCategory());
 
 
