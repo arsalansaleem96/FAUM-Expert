@@ -56,8 +56,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     //public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
 
-    DatabaseReference rootRefrence = FirebaseDatabase.getInstance().getReference("Expert");
-    DatabaseReference keyRefrencee = rootRefrence.child(id);
+    //DatabaseReference rootRefrence = FirebaseDatabase.getInstance().getReference("Expert");
+    DatabaseReference keyRefrencee = FirebaseDatabase.getInstance().getReference("Expert Location Information");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,7 +186,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //      Idhr krna h function call
         //LocationAdding(lat,land);
 
-        String location_table = "Location Information";
+        //String location_table = "Location Information";
 
         //keyRefrencee.child(location_table);
 
@@ -202,7 +202,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
 
-        geoFire.setLocation(location_table, new GeoLocation(mLastLocation.getLatitude(),mLastLocation.getLongitude()));
+        geoFire.setLocation(id, new GeoLocation(mLastLocation.getLatitude(),mLastLocation.getLongitude()));
 
         startActivity(new Intent(MapsActivity.this,Navigation_Drawer.class));
 

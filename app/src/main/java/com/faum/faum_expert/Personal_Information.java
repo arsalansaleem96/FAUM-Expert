@@ -32,7 +32,7 @@ public class Personal_Information extends AppCompatActivity {
         etEmail = (EditText)findViewById(R.id.etEmail);
         btnConfirm = (Button)findViewById(R.id.btnConfirm);
 
-        pInformation = FirebaseDatabase.getInstance().getReference("Expert");
+        pInformation = FirebaseDatabase.getInstance().getReference("Expert Basic Information");
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override

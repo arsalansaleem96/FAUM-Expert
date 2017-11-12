@@ -28,8 +28,10 @@ public class New_Deal_Time extends AppCompatActivity {
     CheckBox checkBox8to10,checkbox12to2,checkBox6to8,checkBox9to11;
     CheckBox checkBoxMonday,checkBoxTuesday,checkBoxWednesday,checkBoxFriday,checkBoxThursday;
 
-    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Expert");
-    DatabaseReference keyRefrence = rootRef.child(id);
+    //DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Expert");
+    DatabaseReference dealTimeRefrence = FirebaseDatabase.getInstance().getReference("Expert Deal Times");
+    DatabaseReference dealPriceRefrence = FirebaseDatabase.getInstance().getReference("Expert Deal Prices");
+    DatabaseReference dealDaysRefrence = FirebaseDatabase.getInstance().getReference("Expert Deal Days");
 
 
 
@@ -124,9 +126,11 @@ public class New_Deal_Time extends AppCompatActivity {
 
             NewDeal_Database dealdays =  new NewDeal_Database( Monday,  Tuesday,  Wednesday,  Thursday, Friday);
 
-            keyRefrence.child(Cooker_Deal).child(DealId).child(DealPrice).setValue(dealprice);
-            keyRefrence.child(Cooker_Deal).child(DealId).child(DealTime).setValue(dealtime);
-            keyRefrence.child(Cooker_Deal).child(DealId).child(DealDays).setValue(dealdays);
+            dealPriceRefrence.child(id).child(DealId).setValue(dealprice);
+
+            dealTimeRefrence.child(id).child(DealId).setValue(dealtime);
+
+            dealDaysRefrence.child(id).child(DealId).setValue(dealdays);
 
             Toast.makeText(this,"Information Added",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(New_Deal_Time.this, Navigation_Drawer.class);

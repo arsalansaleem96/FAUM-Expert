@@ -72,7 +72,7 @@ public class Social_Connect extends AppCompatActivity {
     private CallbackManager callbackManager;
     FirebaseUser user;
 
-    DatabaseReference Userid = FirebaseDatabase.getInstance().getReference("Expert");
+    DatabaseReference Userid = FirebaseDatabase.getInstance().getReference("Expert Basic Information");
 
     public static final String uidemail = "Email and Id";
     public static String email;

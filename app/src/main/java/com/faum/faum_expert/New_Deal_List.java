@@ -1,8 +1,11 @@
 package com.faum.faum_expert;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -29,11 +32,15 @@ public class New_Deal_List extends AppCompatActivity {
 
     //public static final String TAG = "New_Deal_List";
 
-    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Expert");
+    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Expert Deal Information");
 
     //DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
     //DatabaseReference ref = rootRef.child("faum-expert").child("Expert").child(id).child("Cooker Deals");
-    int count = 0;
+    //int count = 0;
+
+    public static final String DEAL_NAME = "dealName";
+    public static final String DEAL_CATEGORY = "newDealCategory";
+    public static final String DEAL_ID = "DealId";
 
 
     @Override
@@ -62,6 +69,22 @@ public class New_Deal_List extends AppCompatActivity {
         ref.addListenerForSingleValueEvent(eventListener);
         */
 
+        lvDealList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                NewDeal_Database newDeal_database = dealList.get(i);
+
+                Intent intent = new Intent(getApplicationContext(), New_Deal_Confirmation.class);
+
+
+                intent.putExtra(DEAL_NAME,newDeal_database.getDealName());
+                intent.putExtra(DEAL_CATEGORY,newDeal_database.getNewDealCategory());
+                intent.putExtra(DEAL_ID,newDeal_database.getDealId());
+                startActivity(intent);
+
+            }
+        });
+
 
     }
 
@@ -73,21 +96,21 @@ public class New_Deal_List extends AppCompatActivity {
         super.onStart();
 
 
-        //dealList.clear();
 
-        rootRef.child(id).child(Cooker_Deal).addValueEventListener(new ValueEventListener() {
+
+        rootRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
+                dealList.clear();
 
                 for(DataSnapshot dealSnapshot : dataSnapshot.getChildren()){
                     for(DataSnapshot datas : dealSnapshot.getChildren()){       //
                         NewDeal_Database info = datas.getValue(NewDeal_Database.class);
-                        count++;
-                        if(count>3){
+                        //count++;
+                        //if(count>3){
                             dealList.add(info);
-                            count=0;
-                        }
+                          //  count=0;
+                        //}
 
 
                     }

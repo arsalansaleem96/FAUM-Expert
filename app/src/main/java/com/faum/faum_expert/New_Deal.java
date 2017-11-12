@@ -21,8 +21,9 @@ import static com.faum.faum_expert.Personal_Information.t_name;
         TextView tvNewDealTitle;
         EditText etDealName,etNewDealCategory,etDishName,etDealDescription;
         Button btnNewDealConfirm;
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Expert");
-        DatabaseReference keyRefrence = rootRef.child(id);
+        //DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Expert");
+        //DatabaseReference keyRefrence = rootRef.child(id);
+        DatabaseReference dealInformation = FirebaseDatabase.getInstance().getReference("Expert Deal Information");
 
         public static String DealId;
         public static String Cooker_Deal = "Cooker Deals";
@@ -65,16 +66,17 @@ import static com.faum.faum_expert.Personal_Information.t_name;
         }else{
 
 
-            DealId = keyRefrence.push().getKey();
+            DealId = dealInformation.push().getKey();
             //firebaseDatabase data =  new firebaseDatabase(DealName,NewDealCategory,DishName,DealDescription);
 
             //Contact_Info info = new Contact_Info( DealName, NewDealCategory,  DealDescription);
 
 
 
-            NewDeal_Database info =  new NewDeal_Database(DealName,NewDealCategory, DishName,  DealDescription);
+            NewDeal_Database info =  new NewDeal_Database(DealId,DealName,NewDealCategory, DishName,  DealDescription);
 
-            keyRefrence.child(Cooker_Deal).child(DealId).child(Deal).setValue(info);
+            //keyRefrence.child(Cooker_Deal).child(DealId).child(Deal).setValue(info);
+            dealInformation.child(id).child(DealId).setValue(info);
 
             Toast.makeText(this,"Information Added",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(New_Deal.this,New_Deal_Time.class);
