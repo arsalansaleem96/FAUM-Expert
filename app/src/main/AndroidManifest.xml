@@ -73,7 +73,8 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".New_Deal" />
         <activity android:name=".New_Deal_Time" />
-        <activity android:name=".New_Deal_List"></activity>
+        <activity android:name=".New_Deal_List" />
+        <activity android:name=".New_Deal_Confirmation"></activity>
     </application>
 
 </manifest>

@@ -72,7 +72,7 @@ import static com.faum.faum_expert.Personal_Information.t_name;
 
 
 
-            NewDeal_Database info =  new NewDeal_Database(DealName,NewDealCategory, DishName,  DealDescription);
+            NewDeal_Database info =  new NewDeal_Database(DealId,DealName,NewDealCategory, DishName,  DealDescription);
 
             keyRefrence.child(Cooker_Deal).child(DealId).child(Deal).setValue(info);
 
