@@ -87,40 +87,22 @@ public class New_Deal_List extends AppCompatActivity {
 
 
     }
-
-
-
-
     @Override
     protected void onStart() {
         super.onStart();
-
-
-
-
-        rootRef.addValueEventListener(new ValueEventListener() {
+        rootRef.child(id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 dealList.clear();
 
                 for(DataSnapshot dealSnapshot : dataSnapshot.getChildren()){
-                    for(DataSnapshot datas : dealSnapshot.getChildren()){       //
-                        NewDeal_Database info = datas.getValue(NewDeal_Database.class);
-                        //count++;
-                        //if(count>3){
-                            dealList.add(info);
-                          //  count=0;
-                        //}
-
-
-                    }
+                        NewDeal_Database info = dealSnapshot.getValue(NewDeal_Database.class);
+                        dealList.add(info);
                 }
                 DealList adapter = new DealList( New_Deal_List.this,dealList);
                 lvDealList.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
-
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(New_Deal_List.this,"Databse error",Toast.LENGTH_SHORT).show();

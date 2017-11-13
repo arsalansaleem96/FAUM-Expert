@@ -7,8 +7,11 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import static com.faum.faum_expert.MainActivity.id;
 
@@ -19,11 +22,10 @@ public class New_Deal_Confirmation extends AppCompatActivity {
     CheckBox checkBoxConfirmation;
 
     DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Expert Deal Confirmation");
-    //DatabaseReference keyRefrence = rootRef.child(id);
 
     public static String DealId;
-    //public static String Cooker_Deal = "Cooker Deals";
-    //public static String  Deal_Status = "Deal Status";
+
+    Boolean check=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,6 @@ public class New_Deal_Confirmation extends AppCompatActivity {
 
         checkBoxConfirmation = (CheckBox)findViewById(R.id.checkBoxConfirmation);
 
-
         Intent intent = getIntent();
 
         String dealName = intent.getStringExtra(New_Deal_List.DEAL_NAME);
@@ -46,8 +47,6 @@ public class New_Deal_Confirmation extends AppCompatActivity {
         tvDealName.setText(dealName);
         tvNewDealCategory.setText(newDealCategory);
 
-
-
         checkBoxConfirmation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,8 +54,30 @@ public class New_Deal_Confirmation extends AppCompatActivity {
             }
         });
 
+        rootRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot dealSnapshot : dataSnapshot.getChildren()){
+                    try {
+                        check  = dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getCheckBoxConfirmation();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
 
+                        if(check==true){
+                            checkBoxConfirmation.setChecked(check);
+                        }else{
+                            checkBoxConfirmation.setChecked(check);
+                        }
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
+
 
     private void AddDealConfirmation(){
         Boolean checkConfirmation = false;
@@ -70,6 +91,5 @@ public class New_Deal_Confirmation extends AppCompatActivity {
             confirm = new NewDeal_Database(checkConfirmation);
         }
         rootRef.child(id).child(DealId).setValue(confirm);
-
     }
 }
