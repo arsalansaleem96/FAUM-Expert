@@ -85,10 +85,10 @@ public class New_Deal_Confirmation extends AppCompatActivity {
 
         if(checkBoxConfirmation.isChecked()==true){
             checkConfirmation = true;
-            confirm = new NewDeal_Database(checkConfirmation);
+            confirm = new NewDeal_Database(checkConfirmation,DealId);
         }else{
             checkConfirmation = false;
-            confirm = new NewDeal_Database(checkConfirmation);
+            confirm = new NewDeal_Database(checkConfirmation,DealId);
         }
         rootRef.child(id).child(DealId).setValue(confirm);
     }

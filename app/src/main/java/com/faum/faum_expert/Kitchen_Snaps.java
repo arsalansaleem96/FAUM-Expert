@@ -77,32 +77,14 @@ public class Kitchen_Snaps extends AppCompatActivity {
             // Continue only if the File was successfully created
             if (photoFile != null) {
                 Uri photoURI = FileProvider.getUriForFile(this,
-                        "com.faum.faum_expert.fileprovider",
+                        getApplicationContext().getPackageName() + ".provider",
                         photoFile);
+
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE);
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,9 +114,7 @@ public class Kitchen_Snaps extends AppCompatActivity {
 
             }
         });
-
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -145,7 +125,7 @@ public class Kitchen_Snaps extends AppCompatActivity {
             mProgress.show();
             Uri uri = data.getData();
 
-            StorageReference filepath = snapsStorage.child("Photos").child(uri.getLastPathSegment());
+            final StorageReference filepath = snapsStorage.child("Photos").child(uri.getLastPathSegment());
             filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -159,6 +139,8 @@ public class Kitchen_Snaps extends AppCompatActivity {
                 }
             });
         }
+    }
+}
 
 
 
@@ -238,7 +220,3 @@ public class Kitchen_Snaps extends AppCompatActivity {
                     Toast.makeText(Kitchen_Snaps.this,"Uploading Finished ... ",Toast.LENGTH_LONG).show();
                 }
             });*/
-
-    }
-
-}

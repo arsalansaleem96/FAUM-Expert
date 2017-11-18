@@ -190,7 +190,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //keyRefrencee.child(location_table);
 
-        GeoFire geoFire = new GeoFire(keyRefrencee);
+        //GeoFire geoFire = new GeoFire(keyRefrencee);
 
 
 
@@ -201,6 +201,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
+
+        GeoFire geoFire = new GeoFire(keyRefrencee);
 
         geoFire.setLocation(id, new GeoLocation(mLastLocation.getLatitude(),mLastLocation.getLongitude()));
 
@@ -332,6 +334,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             markerOptions.title("Current Position");
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
             mCurrLocationMarker = mMap.addMarker(markerOptions);
+            GeoFire geoFire = new GeoFire(keyRefrencee);
+
+            geoFire.setLocation(id, new GeoLocation(mLastLocation.getLatitude(),mLastLocation.getLongitude()));
+
+            startActivity(new Intent(MapsActivity.this,Navigation_Drawer.class));
 
 
 

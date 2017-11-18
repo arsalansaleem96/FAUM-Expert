@@ -37,7 +37,7 @@ public class User_sign extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
                 if(firebaseAuth.getCurrentUser() == null){
-                    startActivity(new Intent(User_sign.this,MainActivity.class));
+                    startActivity(new Intent(User_sign.this,User_Select_SignIn.class));
                 }
             }
         };

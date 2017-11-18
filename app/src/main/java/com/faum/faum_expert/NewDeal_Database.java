@@ -124,13 +124,17 @@ public class NewDeal_Database {
         return Friday;
     }
 
-    public NewDeal_Database(Boolean checkBoxConfirmation){
+
+    public NewDeal_Database(Boolean checkBoxConfirmation,String dealId){
+        this.dealId = dealId;
         this.checkBoxConfirmation = checkBoxConfirmation;
     }
 
     public Boolean getCheckBoxConfirmation() {
         return checkBoxConfirmation;
     }
+
+
 }
 
 

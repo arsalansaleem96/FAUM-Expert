@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.Manifest.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -28,6 +30,7 @@
             android:resource="@xml/file_paths"></meta-data>
     </provider>
     -->
+    <!-- <provider android:name="android.support.v4.content.FileProvider" android:authorities="${applicationId}.provider" android:exported="false" android:grantUriPermissions="true"> <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/> </provider> -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -35,13 +38,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".User_Select_SignIn">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Social_Connect" />
         <activity android:name=".User_sign" />
 
@@ -74,7 +78,18 @@
         <activity android:name=".New_Deal" />
         <activity android:name=".New_Deal_Time" />
         <activity android:name=".New_Deal_List" />
-        <activity android:name=".New_Deal_Confirmation"></activity>
+        <activity android:name=".New_Deal_Confirmation" />
+
+        <activity android:name="com.faum.faum_user.Main2Activity"></activity>
+        <activity android:name="com.faum.faum_user.Social_Connect" />
+        <activity android:name="com.faum.faum_user.User_sign" />
+        <activity android:name="com.faum.faum_user.Personal_Information" />
+        <activity android:name="com.faum.faum_user.Contact_Infrormation" />
+        <activity
+            android:name="com.faum.faum_user.MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity android:name="com.faum.faum_user.New_Deal_List" />
+
     </application>
 
 </manifest>
