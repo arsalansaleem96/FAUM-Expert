@@ -81,4 +81,28 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string name="DEAL_NAME">package com.faum.faum_user.dealName</string>
+    <string name="DEAL_CATEGORY">package com.faum.faum_user.newDealCategory</string>
+    <string name="DEAL_ID">package com.faum.faum_user.dealId</string>
+    <string name="DEAL_DISH_NAME">package com.faum.faum_user.dishName</string>
+    <string name="DEAL_DESCRIPTION">package com.faum.faum_user.dealDescription</string>
+
+    <string name="DEAL_ESTIMATEDTIME">package com.faum.faum_user.EstimateTime</string>
+    <string name="DEAL_PRICE">package com.faum.faum_user.NewDealPrice</string>
+    <string name="DEAL_SIZE">package com.faum.faum_user.NewDealSize</string>
+
+    <string name="DEAL_TIME_EIGHTTOTEN">package com.faum.faum_user.eightToten</string>
+    <string name="DEAL_TIME_TWELVETOTWO">package com.faum.faum_user.twelveTotwo</string>
+    <string name="DEAL_TIME_SIXTOEIGHT">package com.faum.faum_user.sixToeight</string>
+    <string name="DEAL_TIME_NINETOELEVEN">package com.faum.faum_user.nineToeleven</string>
+
+    <string name="DEAL_DAYS_MONDAY">package com.faum.faum_user.Monday</string>
+    <string name="DEAL_DAYS_TUESDAY">package com.faum.faum_user.Tuesday</string>
+    <string name="DEAL_DAYS_WEDNESDAY">package com.faum.faum_user.Wednesday</string>
+    <string name="DEAL_DAYS_THURSDAY">package com.faum.faum_user.Thursday</string>
+    <string name="DEAL_DAYS_FRIDAY">package com.faum.faum_user.Friday</string>
+
+
 </resources>

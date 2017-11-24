@@ -79,8 +79,7 @@
         <activity android:name=".New_Deal_Time" />
         <activity android:name=".New_Deal_List" />
         <activity android:name=".New_Deal_Confirmation" />
-
-        <activity android:name="com.faum.faum_user.Main2Activity"></activity>
+        <activity android:name="com.faum.faum_user.Main2Activity" />
         <activity android:name="com.faum.faum_user.Social_Connect" />
         <activity android:name="com.faum.faum_user.User_sign" />
         <activity android:name="com.faum.faum_user.Personal_Information" />
@@ -89,7 +88,9 @@
             android:name="com.faum.faum_user.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name="com.faum.faum_user.New_Deal_List" />
-
+        <activity android:name="com.faum.faum_user.Deal_Detail_one" />
+        <activity android:name="com.faum.faum_user.Deal_Detail_two" />
+        <activity android:name="com.faum.faum_user.Deal_Detail_three"></activity>
     </application>
 
 </manifest>
