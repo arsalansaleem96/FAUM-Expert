@@ -46,6 +46,7 @@ public class New_Deal_List extends AppCompatActivity {
     public static String DEAL_ID = "";
     public static String DEAL_DISH_NAME = "";
     public static String DEAL_DESCRIPTION = "";
+    //public static String COOKER_ID = "";
 
     public static String DEAL_ESTIMATEDTIME = "";
     public static String DEAL_PRICE = " ";
@@ -111,7 +112,10 @@ public class New_Deal_List extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), Deal_Detail_one.class);
 
-                //Toast.makeText(getApplicationContext(),newDeal_database.getDealId(),Toast.LENGTH_SHORT).show();
+                mEditor.putString(getString(R.string.COOKER_ID), newDeal_database.getuId());
+                mEditor.commit();
+
+                Toast.makeText(getApplicationContext(),newDeal_database.getNewDealPrice(),Toast.LENGTH_SHORT).show();
 
                 passingtoDealInfoValues(newDeal_database.getDealId());
                 passingtoDealPricesValues(newDeal_database.getDealId());
@@ -210,7 +214,7 @@ public class New_Deal_List extends AppCompatActivity {
 
 
     private void passingtoDealPricesValues(final String DealId){
-        Toast.makeText(getApplicationContext(),DealId,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),DealId,Toast.LENGTH_SHORT).show();
 
         dealPricesRefrence.addValueEventListener(new ValueEventListener() {
             @Override
@@ -223,9 +227,9 @@ public class New_Deal_List extends AppCompatActivity {
 
 
 
-                        //Toast.makeText(getApplicationContext(),DEAL_ESTIMATEDTIME,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),DEAL_ESTIMATEDTIME,Toast.LENGTH_SHORT).show();
                         //Toast.makeText(getApplicationContext(),DEAL_PRICE,Toast.LENGTH_LONG).show();
-                        //Toast.makeText(getApplicationContext(),DEAL_SIZE,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(),DEAL_SIZE,Toast.LENGTH_SHORT).show();
 
                         //Toast.makeText(getApplicationContext(),DealId,Toast.LENGTH_SHORT).show();
                     }catch (Exception e){
@@ -250,12 +254,14 @@ public class New_Deal_List extends AppCompatActivity {
     }
     private void passingtoDealTimesValues(final String DealId){
 
+
         dealTimeRefrence.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot dealSnapshot : dataSnapshot.getChildren()) {
                     try{
 
+                        //Toast.makeText(New_Deal_List.this,dealSnapshot.,Toast.LENGTH_SHORT).show();
                         if(dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getEightToten() == true){
                             DEAL_TIME_EIGHTTOTEN = "Available";
                         }else{
@@ -278,10 +284,10 @@ public class New_Deal_List extends AppCompatActivity {
                             DEAL_TIME_NINETOELEVEN = "Not-Available";
                         }
 
-                        Toast.makeText(getApplicationContext(),DEAL_TIME_EIGHTTOTEN,Toast.LENGTH_SHORT).show();
-                        Toast.makeText(getApplicationContext(),DEAL_TIME_TWELVETOTWO,Toast.LENGTH_SHORT).show();
-                        Toast.makeText(getApplicationContext(),DEAL_TIME_SIXTOEIGHT,Toast.LENGTH_SHORT).show();
-                        Toast.makeText(getApplicationContext(),DEAL_TIME_NINETOELEVEN,Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),DEAL_TIME_EIGHTTOTEN,Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),DEAL_TIME_TWELVETOTWO,Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),DEAL_TIME_SIXTOEIGHT,Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),DEAL_TIME_NINETOELEVEN,Toast.LENGTH_SHORT).show();
 
                     }catch (Exception e){
                         e.printStackTrace();
@@ -308,7 +314,7 @@ public class New_Deal_List extends AppCompatActivity {
         });
     }
     private  void passingtoDealDaysValues(final String DealId){
-        Toast.makeText(New_Deal_List.this,DealId,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(New_Deal_List.this,DealId,Toast.LENGTH_SHORT).show();
         dealDaysRefrence.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -413,6 +419,7 @@ public class New_Deal_List extends AppCompatActivity {
                 for(DataSnapshot dealSnapshot : dataSnapshot.getChildren()) {
                     for (DataSnapshot datas : dealSnapshot.getChildren()) {
                         if(mylist.contains(datas.getValue(NewDeal_Database.class).getDealId())) {
+
                             NewDeal_Database info = datas.getValue(NewDeal_Database.class);
                             dealList.add(info);
                         }

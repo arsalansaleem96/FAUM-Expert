@@ -88,6 +88,7 @@
     <string name="DEAL_ID">package com.faum.faum_user.dealId</string>
     <string name="DEAL_DISH_NAME">package com.faum.faum_user.dishName</string>
     <string name="DEAL_DESCRIPTION">package com.faum.faum_user.dealDescription</string>
+    <string name="COOKER_ID">package com.faum.faum_user.cookerID</string>
 
     <string name="DEAL_ESTIMATEDTIME">package com.faum.faum_user.EstimateTime</string>
     <string name="DEAL_PRICE">package com.faum.faum_user.NewDealPrice</string>
@@ -103,6 +104,7 @@
     <string name="DEAL_DAYS_WEDNESDAY">package com.faum.faum_user.Wednesday</string>
     <string name="DEAL_DAYS_THURSDAY">package com.faum.faum_user.Thursday</string>
     <string name="DEAL_DAYS_FRIDAY">package com.faum.faum_user.Friday</string>
+    <string name="title_activity_maps_for_cooker">Map</string>
 
 
 </resources>

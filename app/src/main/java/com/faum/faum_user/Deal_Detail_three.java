@@ -53,7 +53,7 @@ public class Deal_Detail_three extends AppCompatActivity {
         btnDealDetailThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Deal_Detail_three.this,User_sign.class));
+                startActivity(new Intent(Deal_Detail_three.this,MapsActivityForCooker.class));
             }
         });
 

@@ -90,7 +90,10 @@
         <activity android:name="com.faum.faum_user.New_Deal_List" />
         <activity android:name="com.faum.faum_user.Deal_Detail_one" />
         <activity android:name="com.faum.faum_user.Deal_Detail_two" />
-        <activity android:name="com.faum.faum_user.Deal_Detail_three"></activity>
+        <activity android:name="com.faum.faum_user.Deal_Detail_three" />
+        <activity
+            android:name="com.faum.faum_user.MapsActivityForCooker"
+            android:label="@string/title_activity_maps_for_cooker"></activity>
     </application>
 
 </manifest>
