@@ -1,8 +1,11 @@
 package com.faum.faum_user;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +32,8 @@ public class DealList  extends ArrayAdapter <NewDeal_Database> {
         this.dealList = dealList;
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -45,6 +50,7 @@ public class DealList  extends ArrayAdapter <NewDeal_Database> {
         //tvDealName.setText(String.valueOf(info.getDealName()));
         tvDealName.setText(info.getDealName());
         tvNewDealCategory.setText(info.getNewDealCategory());
+
 
 
 

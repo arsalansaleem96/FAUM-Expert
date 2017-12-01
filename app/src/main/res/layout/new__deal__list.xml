@@ -4,45 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.faum.faum_expert.New_Deal_List">
+
+    tools:context="com.faum.faum_expert.New_Deal_List"
+    tools:layout_editor_absoluteY="25dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/tvDealList"
+        android:layout_width="358dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
+        android:background="#e18484"
+        android:gravity="center"
+        android:text="All Deals"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="0dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        app:layout_constraintHorizontal_bias="0.666"
+        tools:layout_editor_absoluteY="2dp"
+        tools:layout_editor_absoluteX="2dp" />
 
     <ListView
         android:id="@+id/lvDealList"
         android:layout_width="0dp"
-        android:layout_height="492dp"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
-
-    <TextView
-        android:id="@+id/tvDealList"
-        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="All Deals"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:gravity="center"
+        android:divider="#e18484"
+        android:dividerHeight="1dp"
+        android:background="@color/background"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/lvDealList"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvDealList"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="13dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>

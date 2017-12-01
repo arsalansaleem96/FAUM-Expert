@@ -13,7 +13,7 @@ import com.faum.faum_expert.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import static com.faum.faum_expert.MainActivity.id;
+import static com.faum.faum_user.Main2Activity.uid;
 
 public class Personal_Information extends AppCompatActivity {
 
@@ -66,7 +66,7 @@ public class Personal_Information extends AppCompatActivity {
             //intent.putExtra(t_name,t_name);
             
             User_Infromation info =new User_Infromation(firstname,lastname);
-            pInformation.child(id).child(t_name).setValue(info);
+            pInformation.child(uid).child(t_name).setValue(info);
 
             Toast.makeText(this,"Information Added",Toast.LENGTH_LONG).show();
             startActivity(intent);

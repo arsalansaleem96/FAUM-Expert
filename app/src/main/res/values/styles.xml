@@ -54,6 +54,12 @@
     <style name="ThemeOverlay.MyTitleText" parent="AppTheme">
         <item name="android:gravity">center</item>
         <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="checkBoxTheme" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">#ed8f4f</item>
+        <item name="colorControlActivated">#d55d5d</item>
     </style>
 
 </resources>

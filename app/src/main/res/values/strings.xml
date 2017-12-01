@@ -105,6 +105,7 @@
     <string name="DEAL_DAYS_THURSDAY">package com.faum.faum_user.Thursday</string>
     <string name="DEAL_DAYS_FRIDAY">package com.faum.faum_user.Friday</string>
     <string name="title_activity_maps_for_cooker">Map</string>
+    <string name="title_activity_navigation__drawer__user">Navigation_Drawer_User</string>
 
 
 </resources>

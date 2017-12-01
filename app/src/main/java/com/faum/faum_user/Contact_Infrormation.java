@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.faum.faum_expert.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import static com.faum.faum_expert.MainActivity.id;
+import static com.faum.faum_user.Main2Activity.uid;
 
 public class Contact_Infrormation extends Personal_Information{
 
@@ -28,7 +28,7 @@ public class Contact_Infrormation extends Personal_Information{
 
     DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("User Basic Information");
     //DatabaseReference personalRef = FirebaseDatabase.getInstance().getReference("Expert");
-    DatabaseReference keyRefrence = rootRef.child(id);
+    DatabaseReference keyRefrence = rootRef.child(uid);
     //DatabaseReference tableRefrence = keyRefrence.
 
     @Override

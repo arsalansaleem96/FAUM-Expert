@@ -10,7 +10,7 @@
     tools:context="com.faum.faum_expert.Contact_Infrormation">
 
     <LinearLayout
-        android:background="#ffffff"
+        android:background="#f5d6d6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6.0"
@@ -30,7 +30,7 @@
                 android:padding="0dp"
                 android:layout_marginTop="40dp"
                 android:text="Contact Information"
-                android:gravity="start"
+                android:gravity="center"
                 android:theme="@style/ThemeOverlay.MyTitleText" />
 
         </LinearLayout>
@@ -47,6 +47,9 @@
                 android:layout_height="wrap_content"
                 android:hint="Landline Number"
                 android:gravity="left"
+                android:background="@drawable/round"
+                android:textColor="#d55d5d"
+                android:padding="10dp"
                 android:layout_marginTop="100dp"
                 android:inputType="phone"/>
 
@@ -66,7 +69,10 @@
                 android:layout_height="wrap_content"
                 android:hint="Cell Number"
                 android:gravity="left"
-                android:layout_marginTop="10dp"
+                android:background="@drawable/round"
+                android:textColor="#d55d5d"
+                android:padding="10dp"
+                android:layout_marginTop="30dp"
                 android:inputType="phone"/>
 
         </LinearLayout>
@@ -83,7 +89,10 @@
                 android:layout_height="wrap_content"
                 android:hint="Resedential Address"
                 android:gravity="left"
-                android:layout_marginTop="100dp"
+                android:background="@drawable/round"
+                android:textColor="#d55d5d"
+                android:padding="30dp"
+                android:layout_marginTop="30dp"
                 android:inputType="textPostalAddress"/>
         </LinearLayout>
 
@@ -98,7 +107,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:layout_marginTop="60dp"
+                android:textColor="@drawable/buttontext"
+                android:background="@drawable/hover"
+                android:layout_marginTop="50dp"
                 android:text="Confirm"/>
 
 

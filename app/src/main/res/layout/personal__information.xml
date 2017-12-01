@@ -11,7 +11,7 @@
 
 
     <LinearLayout
-        android:background="#ffffff"
+        android:background="#f5d6d6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6.0"
@@ -31,12 +31,12 @@
                 android:padding="0dp"
                 android:layout_marginTop="40dp"
                 android:text="What's your name?"
-                android:gravity="start"
+                android:gravity="center"
                 android:theme="@style/ThemeOverlay.MyTitleText" />
 
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -44,25 +44,30 @@
 
             <EditText
                 android:id="@+id/etFName"
-                android:layout_width="140dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Frist Name"
+                android:background="@drawable/round"
+                android:textColor="#d55d5d"
+                android:padding="10dp"
+                android:layout_marginTop="80dp"
                 android:gravity="left"
-                android:layout_marginTop="100dp"
-                android:layout_marginLeft="30dp"
-                android:inputType="textPersonName"/>
+                android:hint="Frist Name"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/etLName"
-                android:layout_width="140dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Last Name"
                 android:gravity="left"
-                android:layout_marginTop="100dp"
-                android:layout_marginLeft="15dp"
-                android:inputType="textPersonName"/>
+                android:background="@drawable/round"
+                android:textColor="#d55d5d"
+                android:padding="10dp"
+                android:hint="Last Name"
+                android:layout_marginTop="80dp"
+                android:layout_below="@+id/etFName"
+                android:inputType="textPersonName" />
 
-            </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -76,8 +81,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email Address"
+                android:textColor="#d55d5d"
                 android:gravity="left"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="110dp"
                 android:inputType="textEmailAddress"/>
             </LinearLayout>
 
@@ -90,6 +96,8 @@
             <Button
                 android:id="@+id/btnConfirm"
                 android:layout_width="0dp"
+                android:textColor="@drawable/buttontext"
+                android:background="@drawable/hover"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
                 android:layout_marginTop="60dp"

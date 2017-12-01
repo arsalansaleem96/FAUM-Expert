@@ -93,7 +93,11 @@
         <activity android:name="com.faum.faum_user.Deal_Detail_three" />
         <activity
             android:name="com.faum.faum_user.MapsActivityForCooker"
-            android:label="@string/title_activity_maps_for_cooker"></activity>
+            android:label="@string/title_activity_maps_for_cooker" />
+        <activity
+            android:name="com.faum.faum_user.Navigation_Drawer_User"
+            android:label="@string/title_activity_navigation__drawer__user"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

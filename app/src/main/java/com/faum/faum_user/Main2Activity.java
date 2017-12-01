@@ -86,7 +86,7 @@ public class Main2Activity extends AppCompatActivity  implements
 
     ProgressBar progressBar;
 
-    public static String id;
+    public static String uid;
     public static String phone;
     public static final String uidphone = "Phone and Id";
 
@@ -409,23 +409,23 @@ public class Main2Activity extends AppCompatActivity  implements
             mDetailText.setText(getString(R.string.firebase_status_fmt, user.getUid()));
 
 
-            id= user.getUid() ;
+            uid= user.getUid() ;
             phone = user.getPhoneNumber();
             //Userid.push().toString();
 
-            Userid.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+            Userid.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
                         // user already exists in db
                         Toast.makeText(Main2Activity.this,"Already user exits",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Main2Activity.this, New_Deal_List.class));
+                        startActivity(new Intent(Main2Activity.this, Navigation_Drawer_User.class));
                         finish();
 
                     }else{
 
-                        UserIdPhoneSet userIdSet = new UserIdPhoneSet(phone,id);
-                        Userid.child(id).child(uidphone).setValue(userIdSet);
+                        UserIdPhoneSet userIdSet = new UserIdPhoneSet(phone,uid);
+                        Userid.child(uid).child(uidphone).setValue(userIdSet);
                         Toast.makeText(Main2Activity.this,"Id and email exits now.",Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(Main2Activity.this,Personal_Information.class));
                         finish();

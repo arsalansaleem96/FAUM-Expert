@@ -48,7 +48,7 @@ import org.w3c.dom.Text;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.TimeUnit;
-import static com.faum.faum_expert.MainActivity.id;
+import static com.faum.faum_user.Main2Activity.uid;
 import static com.faum.faum_expert.Personal_Information.t_name;
 
 
@@ -100,23 +100,23 @@ public class Social_Connect extends AppCompatActivity {
 
 
                 if(firebaseAuth.getCurrentUser() != null){
-                    id= firebaseAuth.getCurrentUser().getUid() ;
+                    uid= firebaseAuth.getCurrentUser().getUid() ;
                     email = firebaseAuth.getCurrentUser().getEmail();
                     //Userid.push().toString();
 
-                    Userid.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+                    Userid.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists()) {
                                 // user already exists in db
                                 Toast.makeText(Social_Connect.this,"Already user exits",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(Social_Connect.this, New_Deal_List.class));
+                                startActivity(new Intent(Social_Connect.this, Navigation_Drawer_User.class));
                                 finish();
 
                             }else{
 
-                                UserIdSet userIdSet = new UserIdSet(email,id);
-                                Userid.child(id).child(uidemail).setValue(userIdSet);
+                                UserIdSet userIdSet = new UserIdSet(email,uid);
+                                Userid.child(uid).child(uidemail).setValue(userIdSet);
                                 Toast.makeText(Social_Connect.this,"Id and email exits now.",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(Social_Connect.this,Personal_Information.class));
                                 finish();
@@ -150,23 +150,23 @@ public class Social_Connect extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 if(user != null){
                     facebookCheck = true;
-                    id= user.getUid() ;
+                    uid= user.getUid() ;
                     email = user.getEmail();
                     //Userid.push().toString();
 
-                    Userid.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+                    Userid.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists()) {
                                 // user already exists in db
                                 Toast.makeText(Social_Connect.this,"Already user exits",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(Social_Connect.this,New_Deal_List.class));
+                                startActivity(new Intent(Social_Connect.this,Navigation_Drawer_User.class));
                                 finish();
 
                             }else{
 
-                                UserIdSet userIdSet = new UserIdSet(email,id);
-                                Userid.child(id).child(uidemail).setValue(userIdSet);
+                                UserIdSet userIdSet = new UserIdSet(email,uid);
+                                Userid.child(uid).child(uidemail).setValue(userIdSet);
                                 Toast.makeText(Social_Connect.this,"Id and email exits now.",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(Social_Connect.this,Personal_Information.class));
                                 finish();

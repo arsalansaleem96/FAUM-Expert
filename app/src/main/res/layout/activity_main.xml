@@ -13,7 +13,7 @@
 
 
     <LinearLayout
-        android:background="#cfd8dc"
+        android:background="#f5d6d6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3.56"
@@ -40,7 +40,7 @@
             android:id="@+id/status"
             style="@style/ThemeOverlay.MyTextDetail"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="@color/colorAccent"
+            android:textColor="#cb3434"
             android:text="You are not logged in !" />
         <RelativeLayout
             android:layout_width="match_parent"
@@ -73,7 +73,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="2.5"
-        android:background="#bdbdbd"
+        android:background="#e18484"
         android:gravity="center_vertical">
 
         <LinearLayout
@@ -95,7 +95,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_phone_number"
-                    android:theme="@style/ThemeOverlay.MyLightEditText"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#ffffff"
                     android:layout_weight="1.0"
                     android:inputType="phone"/>
 
@@ -104,7 +105,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_verification_code"
-                    android:theme="@style/ThemeOverlay.MyLightEditText"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#ffffff"
                     android:layout_weight="1.0"
                     android:inputType="number"/>
 
@@ -117,24 +119,29 @@
                 android:weightSum="3.0">
 
                 <Button
-                    android:theme="@style/ThemeOverlay.MyDarkButton"
                     android:id="@+id/button_start_verification"
                     android:layout_width="0dp"
+                    android:textColor="@drawable/buttontext"
+                    android:background="@drawable/hover"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
                     android:text="@string/start_phone_auth"/>
 
                 <Button
-                    android:theme="@style/ThemeOverlay.MyDarkButton"
+
                     android:id="@+id/button_verify_phone"
+                    android:textColor="@drawable/buttontext"
+                    android:background="@drawable/hover"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
                     android:text="@string/verify_phone_auth"/>
 
                 <Button
-                    android:theme="@style/ThemeOverlay.MyDarkButton"
+
                     android:id="@+id/button_resend"
+                    android:textColor="@drawable/buttontext"
+                    android:background="@drawable/hover"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"

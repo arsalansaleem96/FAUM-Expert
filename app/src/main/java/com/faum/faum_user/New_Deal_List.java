@@ -81,6 +81,9 @@ public class New_Deal_List extends AppCompatActivity {
 
         lvDealList = (ListView)findViewById(R.id.lvDealList);
 
+
+
+
         dealList = new ArrayList<>();
         /*
         ValueEventListener eventListener = new ValueEventListener() {
@@ -115,40 +118,13 @@ public class New_Deal_List extends AppCompatActivity {
                 mEditor.putString(getString(R.string.COOKER_ID), newDeal_database.getuId());
                 mEditor.commit();
 
-                Toast.makeText(getApplicationContext(),newDeal_database.getNewDealPrice(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),newDeal_database.getNewDealPrice(),Toast.LENGTH_SHORT).show();
 
                 passingtoDealInfoValues(newDeal_database.getDealId());
                 passingtoDealPricesValues(newDeal_database.getDealId());
                 passingtoDealTimesValues(newDeal_database.getDealId());
                 passingtoDealDaysValues(newDeal_database.getDealId());
-
-
-                /*
-                try{
-                    DEAL_ESTIMATEDTIME = newDeal_database.getEstimateTime();
-                    DEAL_PRICE = newDeal_database.getNewDealPrice();
-                    DEAL_SIZE = newDeal_database.getNewDealSize();
-
-
-
-                    Toast.makeText(getApplicationContext(),DEAL_ESTIMATEDTIME,Toast.LENGTH_LONG).show();
-                    Toast.makeText(getApplicationContext(),DEAL_PRICE,Toast.LENGTH_LONG).show();
-                    Toast.makeText(getApplicationContext(),DEAL_SIZE,Toast.LENGTH_LONG).show();
-
-                   //oast.makeText(getApplicationContext(),DealId,Toast.LENGTH_SHORT).show();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }finally {
-                    mEditor.putString(getString(R.string.DEAL_ESTIMATEDTIME), DEAL_ESTIMATEDTIME);
-                    mEditor.commit();
-
-                    mEditor.putString(getString(R.string.DEAL_PRICE), DEAL_PRICE);
-                    mEditor.commit();
-
-                    mEditor.putString(getString(R.string.DEAL_SIZE), DEAL_SIZE);
-                    mEditor.commit();
-                }*/
-
+                //passingtoDealDaysCheckValues(newDeal_database.getDealId());
 
 
                 //intent.putExtra(DEAL_NAME,newDeal_database.getDealName());
@@ -221,6 +197,7 @@ public class New_Deal_List extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot dealSnapshot : dataSnapshot.getChildren()) {
                     try{
+                        Toast.makeText(New_Deal_List.this,dealSnapshot.child(DealId).toString(),Toast.LENGTH_SHORT).show();
                         DEAL_ESTIMATEDTIME = dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getEstimateTime();
                         DEAL_PRICE = dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getNewDealPrice();
                         DEAL_SIZE = dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getNewDealSize();
@@ -235,6 +212,9 @@ public class New_Deal_List extends AppCompatActivity {
                     }catch (Exception e){
                         e.printStackTrace();
                     }finally {
+                        DEAL_ESTIMATEDTIME="60";
+                        DEAL_PRICE = "700";
+                        DEAL_SIZE = "10";
                         mEditor.putString(getString(R.string.DEAL_ESTIMATEDTIME), DEAL_ESTIMATEDTIME);
                         mEditor.commit();
 
@@ -313,24 +293,32 @@ public class New_Deal_List extends AppCompatActivity {
             }
         });
     }
+
     private  void passingtoDealDaysValues(final String DealId){
-        //Toast.makeText(New_Deal_List.this,DealId,Toast.LENGTH_SHORT).show();
+
         dealDaysRefrence.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot dealSnapshot : dataSnapshot.getChildren()) {
-                    try{
+                for(DataSnapshot dealSnapshot : dataSnapshot.getChildren())
+                {
+                    NewDeal_Database newDeal_database = dealSnapshot.child(DealId).getValue(NewDeal_Database.class);
 
-                        if(dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getMonday() == true){
+                    try{
+                        Toast.makeText(New_Deal_List.this,dealSnapshot.child(DealId).toString(),Toast.LENGTH_SHORT).show();
+                        if(newDeal_database.getMonday()== true ){
+                            Toast.makeText(getApplicationContext(),DEAL_DAYS_MONDAY,Toast.LENGTH_SHORT).show();
                             DEAL_DAYS_MONDAY = "Available";
                         }else{
+                            Toast.makeText(getApplicationContext(),DEAL_DAYS_MONDAY,Toast.LENGTH_SHORT).show();
                             DEAL_DAYS_MONDAY = "Not-Available";
                         }
                         if(dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getTuesday() == true){
                             DEAL_DAYS_TUESDAY = "Available";
+                            Toast.makeText(getApplicationContext(),DEAL_DAYS_TUESDAY,Toast.LENGTH_SHORT).show();
 
                         }else{
                             DEAL_DAYS_TUESDAY = "Not-Available";
+                            Toast.makeText(getApplicationContext(),DEAL_DAYS_TUESDAY,Toast.LENGTH_SHORT).show();
                         }
                         if(dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getWednesday() == true){
                             DEAL_DAYS_WEDNESDAY = "Available";
@@ -348,7 +336,7 @@ public class New_Deal_List extends AppCompatActivity {
                             DEAL_DAYS_FRIDAY = "Not-Available";
                         }
 
-                        Toast.makeText(getApplicationContext(),DEAL_DAYS_MONDAY,Toast.LENGTH_SHORT).show();
+
                         Toast.makeText(getApplicationContext(),DEAL_DAYS_TUESDAY,Toast.LENGTH_SHORT).show();
                         Toast.makeText(getApplicationContext(),DEAL_DAYS_WEDNESDAY,Toast.LENGTH_SHORT).show();
                         Toast.makeText(getApplicationContext(),DEAL_DAYS_FRIDAY,Toast.LENGTH_SHORT).show();
@@ -356,6 +344,11 @@ public class New_Deal_List extends AppCompatActivity {
                     }catch (Exception e){
                         e.printStackTrace();
                     }finally {
+                        DEAL_DAYS_MONDAY = "Available";
+                        DEAL_DAYS_TUESDAY = "Available";
+                        DEAL_DAYS_WEDNESDAY = "Not-Available";
+                        DEAL_DAYS_THURSDAY = "Not-Available";
+                        DEAL_DAYS_FRIDAY = "Not-Available";
                         mEditor.putString(getString(R.string.DEAL_DAYS_MONDAY), DEAL_DAYS_MONDAY);
                         mEditor.commit();
 

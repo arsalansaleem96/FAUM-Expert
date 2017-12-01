@@ -11,7 +11,7 @@
     >
 
     <LinearLayout
-        android:background="#cfd8dc"
+        android:background="#f5d6d6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6.0"
@@ -30,7 +30,6 @@
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.0"
             android:layout_marginTop="5dp"></com.facebook.login.widget.LoginButton>
 
         </LinearLayout>

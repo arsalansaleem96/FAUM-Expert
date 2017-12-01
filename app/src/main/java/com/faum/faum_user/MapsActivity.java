@@ -38,7 +38,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import static com.faum.faum_expert.MainActivity.id;
+import static com.faum.faum_user.Main2Activity.uid;
 import static com.faum.faum_expert.R.id.map;
 
 
@@ -204,9 +204,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
 
-        geoFire.setLocation(id, new GeoLocation(mLastLocation.getLatitude(),mLastLocation.getLongitude()));
+        geoFire.setLocation(uid, new GeoLocation(mLastLocation.getLatitude(),mLastLocation.getLongitude()));
 
-        startActivity(new Intent(MapsActivity.this, com.faum.faum_user.New_Deal_List.class));
+        startActivity(new Intent(MapsActivity.this, Navigation_Drawer_User.class));
 
         //stop location updates
         if (mGoogleApiClient != null) {
@@ -336,9 +336,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mCurrLocationMarker = mMap.addMarker(markerOptions);
             GeoFire geoFire = new GeoFire(keyRefrencee);
 
-            geoFire.setLocation(id, new GeoLocation(mLastLocation.getLatitude(),mLastLocation.getLongitude()));
+            geoFire.setLocation(uid, new GeoLocation(mLastLocation.getLatitude(),mLastLocation.getLongitude()));
 
-            startActivity(new Intent(MapsActivity.this, com.faum.faum_user.New_Deal_List.class));
+            startActivity(new Intent(MapsActivity.this, Navigation_Drawer_User.class));
 
 
 
