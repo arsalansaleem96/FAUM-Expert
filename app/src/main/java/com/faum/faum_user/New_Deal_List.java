@@ -117,6 +117,8 @@ public class New_Deal_List extends AppCompatActivity {
 
                 mEditor.putString(getString(R.string.COOKER_ID), newDeal_database.getuId());
                 mEditor.commit();
+                mEditor.putString(getString(R.string.DEAL_ID), newDeal_database.getDealId());
+                mEditor.commit();
 
                 //Toast.makeText(getApplicationContext(),newDeal_database.getNewDealPrice(),Toast.LENGTH_SHORT).show();
 

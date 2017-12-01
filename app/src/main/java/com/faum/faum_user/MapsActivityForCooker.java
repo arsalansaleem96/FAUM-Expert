@@ -54,8 +54,8 @@ public class MapsActivityForCooker extends FragmentActivity implements OnMapRead
     Button btnConfirmLocation;
     private int PLACE_PICKER_REQUEST=1;
 
-    LatLng userLocation;
-    LatLng cookerLocation;
+    public static LatLng userLocation;
+    public static LatLng cookerLocation;
 
     String placeName,placeAddress;
 
@@ -192,7 +192,7 @@ public class MapsActivityForCooker extends FragmentActivity implements OnMapRead
         btnConfirmLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MapsActivityForCooker.this,User_sign.class));
+                startActivity(new Intent(MapsActivityForCooker.this,Deal_Invoice.class));
             }
         });
 
