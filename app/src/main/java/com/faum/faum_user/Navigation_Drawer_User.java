@@ -89,6 +89,8 @@ public class Navigation_Drawer_User extends AppCompatActivity
             Toast.makeText(this,"You are in New Deal List", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this,New_Deal_List.class));
         } else if (id == R.id.nav_gallery) {
+            Toast.makeText(this,"Recent order list",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this,Recent_Order_List.class));
 
         } else if (id == R.id.nav_slideshow) {
 

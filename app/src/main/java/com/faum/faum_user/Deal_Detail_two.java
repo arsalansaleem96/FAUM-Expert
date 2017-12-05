@@ -35,8 +35,8 @@ public class Deal_Detail_two extends AppCompatActivity {
         String NewDealSize = mPrefrences.getString(getString(R.string.DEAL_SIZE)," ");
 
         tvDDTEstimatedValue.setText(EstimateTime);
-        tvDDTSizeValue.setText(NewDealPrice);
-        tvDDTPriceValue.setText(NewDealSize);
+        tvDDTSizeValue.setText(NewDealSize);
+        tvDDTPriceValue.setText(NewDealPrice);
 
         //Toast.makeText(getApplicationContext(),EstimateTime,Toast.LENGTH_LONG).show();
         //Toast.makeText(getApplicationContext(),NewDealPrice,Toast.LENGTH_LONG).show();

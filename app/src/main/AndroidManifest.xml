@@ -79,6 +79,10 @@
         <activity android:name=".New_Deal_Time" />
         <activity android:name=".New_Deal_List" />
         <activity android:name=".New_Deal_Confirmation" />
+        <activity android:name=".Recent_Order_List" />
+        <activity android:name=".Recent_Order_Data"></activity>
+
+
         <activity android:name="com.faum.faum_user.Main2Activity" />
         <activity android:name="com.faum.faum_user.Social_Connect" />
         <activity android:name="com.faum.faum_user.User_sign" />
@@ -98,7 +102,9 @@
             android:name="com.faum.faum_user.Navigation_Drawer_User"
             android:label="@string/title_activity_navigation__drawer__user"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.faum.faum_user.Deal_Invoice"></activity>
+        <activity android:name="com.faum.faum_user.Deal_Invoice" />
+        <activity android:name="com.faum.faum_user.Recent_Order_List" />
+        <activity android:name="com.faum.faum_user.Recent_Order_Data"></activity>
     </application>
 
 </manifest>

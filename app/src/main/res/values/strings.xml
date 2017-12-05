@@ -90,6 +90,10 @@
     <string name="DEAL_DESCRIPTION">package com.faum.faum_user.dealDescription</string>
     <string name="COOKER_ID">package com.faum.faum_user.cookerID</string>
 
+    <string name="ORDER_PRICE">package com.faum.faum_user.orderPrice</string>
+    <string name="ORDER_QTY">package com.faum.faum_user.orderQty</string>
+    <string name="ORDER_ID">package com.faum.faum_user.orderID</string>
+
     <string name="DEAL_ESTIMATEDTIME">package com.faum.faum_user.EstimateTime</string>
     <string name="DEAL_PRICE">package com.faum.faum_user.NewDealPrice</string>
     <string name="DEAL_SIZE">package com.faum.faum_user.NewDealSize</string>
@@ -107,7 +111,10 @@
     <string name="title_activity_maps_for_cooker">Map</string>
     <string name="title_activity_navigation__drawer__user">Navigation_Drawer_User</string>
 
-
+    <string name="DEAL_NAME_EXPERT">package com.faum.faum_expert.dealName</string>
+    <string name="DEAL_CATEGORY_EXPERT">package com.faum.faum_expert.newDealCategory</string>
+    <string name="ORDER_PRICE_EXPERT">package com.faum.faum_expert.orderPrice</string>
+    <string name="ORDER_QTY_EXPERT">package com.faum.faum_expert.orderQty</string>
 
 
 </resources>

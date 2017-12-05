@@ -199,7 +199,7 @@ public class New_Deal_List extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot dealSnapshot : dataSnapshot.getChildren()) {
                     try{
-                        Toast.makeText(New_Deal_List.this,dealSnapshot.child(DealId).toString(),Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(New_Deal_List.this,dealSnapshot.child(DealId).toString(),Toast.LENGTH_SHORT).show();
                         DEAL_ESTIMATEDTIME = dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getEstimateTime();
                         DEAL_PRICE = dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getNewDealPrice();
                         DEAL_SIZE = dealSnapshot.child(DealId).getValue(NewDeal_Database.class).getNewDealSize();
@@ -306,7 +306,7 @@ public class New_Deal_List extends AppCompatActivity {
                     NewDeal_Database newDeal_database = dealSnapshot.child(DealId).getValue(NewDeal_Database.class);
 
                     try{
-                        Toast.makeText(New_Deal_List.this,dealSnapshot.child(DealId).toString(),Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(New_Deal_List.this,dealSnapshot.child(DealId).toString(),Toast.LENGTH_SHORT).show();
                         if(newDeal_database.getMonday()== true ){
                             Toast.makeText(getApplicationContext(),DEAL_DAYS_MONDAY,Toast.LENGTH_SHORT).show();
                             DEAL_DAYS_MONDAY = "Available";
@@ -339,9 +339,9 @@ public class New_Deal_List extends AppCompatActivity {
                         }
 
 
-                        Toast.makeText(getApplicationContext(),DEAL_DAYS_TUESDAY,Toast.LENGTH_SHORT).show();
-                        Toast.makeText(getApplicationContext(),DEAL_DAYS_WEDNESDAY,Toast.LENGTH_SHORT).show();
-                        Toast.makeText(getApplicationContext(),DEAL_DAYS_FRIDAY,Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),DEAL_DAYS_TUESDAY,Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),DEAL_DAYS_WEDNESDAY,Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),DEAL_DAYS_FRIDAY,Toast.LENGTH_SHORT).show();
 
                     }catch (Exception e){
                         e.printStackTrace();

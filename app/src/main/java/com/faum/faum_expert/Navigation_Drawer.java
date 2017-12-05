@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.faum.faum_user.*;
+
 public class Navigation_Drawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -92,6 +94,8 @@ public class Navigation_Drawer extends AppCompatActivity
             startActivity(new Intent(this,New_Deal_List.class));
 
         } else if (id == R.id.nav_slideshow) {
+            Toast.makeText(this,"You are in Recent order activity",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Recent_Order_List.class));
 
         } else if (id == R.id.nav_manage) {
             Toast.makeText(this,"You are in log out activity",Toast.LENGTH_SHORT).show();

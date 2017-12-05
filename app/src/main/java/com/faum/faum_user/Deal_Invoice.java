@@ -37,7 +37,12 @@ public class Deal_Invoice extends AppCompatActivity {
     int NewDealPrice;
     DatabaseReference userOrderRefrence = FirebaseDatabase.getInstance().getReference("Confirmed Order");
 
+
+
     DatabaseReference expertContactRefrence = FirebaseDatabase.getInstance().getReference("Expert Basic Information");
+
+    DatabaseReference expertOrderConfirmedRefrence = FirebaseDatabase.getInstance().getReference("Expert Confirmed Order");
+    DatabaseReference userOrderConfirmedRefrence = FirebaseDatabase.getInstance().getReference("User Confirmed Order");
 
     SharedPreferences mPrefrences;
 
@@ -132,10 +137,14 @@ public class Deal_Invoice extends AppCompatActivity {
 
                 userOrderRefrence.child(orderID).setValue(data);
 
+                expertOrderConfirmedRefrence.child(cookerID).child(orderID).setValue(data);
+
+                userOrderConfirmedRefrence.child(userID).child(orderID).setValue(data);
 
 
-                geoFireUser.setLocation(userID,new GeoLocation(userLocation.latitude,userLocation.longitude));
-                geoFireCooker.setLocation(cookerID,new GeoLocation(cookerLocation.latitude,cookerLocation.longitude));
+
+                //geoFireUser.setLocation(userID,new GeoLocation(userLocation.latitude,userLocation.longitude));
+                //geoFireCooker.setLocation(cookerID,new GeoLocation(cookerLocation.latitude,cookerLocation.longitude));
 
                 Toast.makeText(getApplicationContext(),"Order Confirmed",Toast.LENGTH_LONG).show();
             }
