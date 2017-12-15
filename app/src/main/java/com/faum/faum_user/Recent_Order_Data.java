@@ -36,9 +36,9 @@ public class Recent_Order_Data extends AppCompatActivity {
 
         Toast.makeText(Recent_Order_Data.this,dealName, Toast.LENGTH_SHORT).show();
 
-        tvOrderDealName.setText(dealName);
-        tvOrderDealCat.setText(newDealCategory);
-        tvOrderDealPrice.setText(dealTotalPrice);
-        tvOrderDealQty.setText(dealTotalQty);
+        tvOrderDealName.setText("Deal Name: "+dealName);
+        tvOrderDealCat.setText("Category: "+newDealCategory);
+        tvOrderDealPrice.setText("Total Price: "+dealTotalPrice);
+        tvOrderDealQty.setText("Total Qty: "+dealTotalQty);
     }
 }

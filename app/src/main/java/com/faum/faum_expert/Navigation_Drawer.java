@@ -101,10 +101,6 @@ public class Navigation_Drawer extends AppCompatActivity
             Toast.makeText(this,"You are in log out activity",Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this,User_sign.class));
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

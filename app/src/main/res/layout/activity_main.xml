@@ -186,7 +186,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
                 android:text="Sign Out"
-                android:theme="@style/ThemeOverlay.MyDarkButton" />
+                android:textColor="@drawable/buttontext"
+                android:background="@drawable/hover" />
 
         </LinearLayout>
 

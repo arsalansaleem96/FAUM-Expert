@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@drawable/back"
     tools:context="com.faum.faum_user.Navigation_Drawer_User"
     tools:showIn="@layout/app_bar_navigation__drawer__user">
 
