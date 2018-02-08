@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.faum.faum_rider.Main3Activity;
 import com.faum.faum_user.Main2Activity;
 
 import java.nio.BufferUnderflowException;
@@ -46,6 +47,9 @@ public class User_Select_SignIn extends AppCompatActivity {
         btnDriver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(User_Select_SignIn.this, Main3Activity.class);
+                flagDriver = true;
+                startActivity(intent);
 
             }
         });
