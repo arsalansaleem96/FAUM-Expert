@@ -38,7 +38,7 @@
         android:roundIcon="@mipmap/dish2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".User_Select_SignIn"></activity>
+        <activity android:name=".User_Select_SignIn" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Social_Connect" />
         <activity android:name=".User_sign" />
@@ -104,7 +104,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.faum.faum_rider.Main3Activity"></activity>
+        <activity android:name="com.faum.faum_rider.Main3Activity" />
         <activity android:name="com.faum.faum_rider.Social_Connect" />
         <activity android:name="com.faum.faum_rider.User_sign" />
         <activity android:name="com.faum.faum_rider.Personal_Information" />
@@ -112,6 +112,7 @@
         <activity
             android:name="com.faum.faum_rider.MapsActivity"
             android:label="@string/title_activity_maps" />
+        <activity android:name=".RidersIDS"></activity>
     </application>
 
 </manifest>
