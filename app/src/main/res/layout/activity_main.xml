@@ -26,7 +26,7 @@
             android:layout_width="280dp"
             android:layout_height="140dp"
             android:contentDescription="@string/desc_firebase_lockup"
-            android:src="@drawable/dish2" />
+            android:src="@drawable/pstu" />
 
         <TextView
             android:id="@+id/title_text"

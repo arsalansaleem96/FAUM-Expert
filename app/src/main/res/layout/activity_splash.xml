@@ -19,7 +19,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:src="@drawable/dish2" />
+            android:src="@drawable/pstu" />
 
         <TextView
             android:id="@+id/tv"
